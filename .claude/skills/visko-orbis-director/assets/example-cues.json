@@ -1,0 +1,37 @@
+{
+  "title": "Volcanic coast — golden hour to phosphorescent night, then a storm",
+  "anchor": "The same black volcanic coastline, the same slow aerial camera flying close to the water.",
+  "seed": 42,
+  "resolution": "2k",
+  "audio_enabled": true,
+  "audio_prompt": "",
+  "reference_image": null,
+  "cues": [
+    {
+      "id": "open",
+      "at_chunk": 0,
+      "prompt": "A dramatic coastline of black volcanic cliffs at golden hour, huge dark waves rolling in from a blood-orange sea and exploding into white foam against the rocks. The camera flies slowly along the cliff line close to the water. Cinematic, photorealistic, warm low sunlight from screen-right. Continuous slow aerial motion, no cuts, a single unbroken take."
+    },
+    {
+      "id": "blue-hour",
+      "at_chunk": 10,
+      "prompt": "The same black volcanic coastline, the same slow aerial camera flying close to the water. The sun has set; the sky is deep cobalt blue and the foam on the waves looks pale and cold. Cinematic, photorealistic. Continuous slow aerial motion, no cuts, a single unbroken take."
+    },
+    {
+      "id": "night-glow",
+      "at_chunk": 19,
+      "prompt": "The same black volcanic coastline, the same slow aerial camera flying close to the water. Night has fallen; the sky is violet-black and the waves roll in edged with faint blue phosphorescent foam that glows where it hits the rocks. Cinematic, photorealistic. Continuous slow aerial motion, no cuts, a single unbroken take."
+    },
+    {
+      "id": "storm-builds",
+      "at_chunk": 28,
+      "prompt": "The same black volcanic coastline at night, the same slow aerial camera flying close to the water. Heavy rain now falls across the frame and the waves grow taller, still glowing blue along their crests. Cinematic, photorealistic. Continuous slow aerial motion, no cuts, a single unbroken take.",
+      "note": "Hold here ~15 chunks for a breathing section."
+    },
+    {
+      "id": "lightning",
+      "at_chunk": 44,
+      "prompt": "The same black volcanic coastline at night in heavy rain, the same slow aerial camera flying close to the water. Distant lightning flashes behind the cliffs and lights the glowing blue waves for an instant. Cinematic, photorealistic. Continuous slow aerial motion, no cuts, a single unbroken take."
+    }
+  ]
+}

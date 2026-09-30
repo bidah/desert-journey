@@ -1,0 +1,1019 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: #0a0a0b;
+  color: #f6f4ed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: radial-gradient(circle at 50% 0, #252117, #0a0a0b 42%);
+}
+
+button,
+textarea,
+select,
+input {
+  font: inherit;
+}
+
+main {
+  width: min(1440px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 56px 0;
+}
+
+header {
+  max-width: 900px;
+  margin-bottom: 28px;
+}
+
+h1 {
+  margin: 4px 0 8px;
+  font-size: clamp(2rem, 5vw, 4.4rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+header p {
+  color: #aaa69a;
+  line-height: 1.5;
+}
+
+.eyebrow {
+  color: #e5c978;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.demo-shell {
+  padding: 18px;
+  border: 1px solid #38352d;
+  border-radius: 18px;
+  background: #111113cc;
+}
+
+.session-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.8fr);
+  align-items: start;
+  gap: 18px;
+}
+
+.stage,
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.timecode {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 9px;
+  color: #e5c978;
+  font:
+    13px ui-monospace,
+    monospace;
+  background: #191919cc;
+  border-radius: 999px;
+}
+
+.timeline {
+  max-height: 520px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+  border: 1px solid #3b3932;
+  border-radius: 10px;
+}
+
+.beat {
+  padding: 7px 10px;
+  color: #918d82;
+  font-size: 0.76rem;
+  line-height: 1.4;
+  border-bottom: 1px solid #1f1e1b;
+}
+
+.beat-row {
+  display: grid;
+  grid-template-columns: 88px auto minmax(0, 1fr) 170px;
+  align-items: start;
+  gap: 10px;
+}
+
+.beat-thumb {
+  display: grid;
+  width: 96px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  color: #5c5950;
+  font-size: 0.66rem;
+  background: #000;
+  border-radius: 4px;
+  place-items: center;
+}
+
+.beat-thumb.working {
+  outline: 1px dashed #e5c978;
+}
+
+.beat-thumb.failed {
+  outline: 1px solid #ffb2b2;
+}
+
+.beat-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.beat-details {
+  margin: 6px 0 0 98px;
+}
+
+.beat-details summary {
+  color: #77746b;
+  cursor: pointer;
+}
+
+.beat-details[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.beat-details textarea {
+  min-height: 90px;
+}
+
+.prep {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background: #0b0b0c;
+  border-radius: 8px;
+}
+
+.prep .hint {
+  margin: 0;
+}
+
+.beat-time,
+.beat-status {
+  font-family: ui-monospace, monospace;
+}
+
+.beat-scene {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.beat-status {
+  text-align: right;
+}
+
+.beat.accepted .beat-status,
+.beat.on-air .beat-status {
+  color: #8ee59d;
+}
+
+.beat.sent .beat-status,
+.beat.restarting .beat-status {
+  color: #e5c978;
+}
+
+.beat.failed .beat-status,
+.beat.skipped .beat-status {
+  color: #ffb2b2;
+}
+
+.beat.current {
+  color: #f6f4ed;
+  background: #2a2618;
+}
+
+.cue-setup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cue-text {
+  min-height: 220px;
+  font:
+    12px ui-monospace,
+    monospace;
+}
+
+.image-row {
+  display: grid;
+  grid-template-columns: 1fr 160px;
+  align-items: end;
+  gap: 10px;
+}
+
+.thumb {
+  display: grid;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  color: #77746b;
+  font-size: 0.7rem;
+  text-align: center;
+  background: #000;
+  border-radius: 8px;
+  place-items: center;
+}
+
+.thumb {
+  position: relative;
+}
+
+.thumb-remove {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: grid;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  color: #f6f4ed;
+  font-size: 16px;
+  line-height: 1;
+  background: #000000cc;
+  border: 1px solid #4e4a3e;
+  border-radius: 999px;
+  place-items: center;
+}
+
+.thumb-remove:hover {
+  background: #3c1717;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+label.inline {
+  flex-direction: row;
+  align-items: center;
+}
+
+label.inline select,
+label.inline input {
+  width: auto;
+}
+
+label.checkbox {
+  flex-direction: row;
+  align-items: center;
+}
+
+label.checkbox input {
+  width: auto;
+}
+
+button.link {
+  padding: 0;
+  color: #e5c978;
+  background: none;
+  border: none;
+  text-decoration: underline;
+}
+
+.json {
+  max-height: 320px;
+  margin: 0;
+  padding: 10px;
+  overflow: auto;
+  color: #aaa69a;
+  font-size: 0.7rem;
+  background: #0b0b0c;
+  border-radius: 8px;
+}
+
+.player {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #000;
+  border-radius: 12px;
+}
+
+.player video {
+  width: 100%;
+  height: 100%;
+}
+
+.player-placeholder {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  color: #77746b;
+  font-size: 0.85rem;
+  place-items: center;
+}
+
+.status {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px 9px;
+  color: #aaa;
+  font:
+    12px ui-monospace,
+    monospace;
+  background: #191919cc;
+  border-radius: 999px;
+}
+
+.status-ready {
+  color: #8ee59d;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+fieldset {
+  margin: 0;
+  padding: 12px;
+  border: 1px solid #3b3932;
+  border-radius: 10px;
+}
+
+legend {
+  padding: 0 6px;
+  color: #ded5b8;
+  font-size: 0.82rem;
+}
+
+.hint {
+  margin: 0 0 12px;
+  color: #77746b;
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #bbb7ab;
+  font-size: 0.82rem;
+}
+
+textarea,
+select,
+input {
+  width: 100%;
+  padding: 10px;
+  color: inherit;
+  background: #171719;
+  border: 1px solid #3b3932;
+  border-radius: 8px;
+}
+
+textarea {
+  min-height: 118px;
+  line-height: 1.45;
+  resize: vertical;
+}
+
+button {
+  padding: 9px 12px;
+  color: #15130e;
+  cursor: pointer;
+  background: #ded5b8;
+  border: 1px solid #ded5b8;
+  border-radius: 8px;
+  transition:
+    filter 100ms ease,
+    transform 100ms ease;
+}
+
+button:active:not(:disabled) {
+  filter: brightness(0.82);
+  transform: translateY(2px);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.secondary button {
+  color: #ded5b8;
+  background: transparent;
+  border-color: #4e4a3e;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 10px;
+}
+
+.selected-image {
+  margin: 10px 0 0;
+  color: #918d82;
+  font-size: 0.76rem;
+  overflow-wrap: anywhere;
+}
+
+.error {
+  margin: 0;
+  padding: 10px;
+  color: #ffb2b2;
+  font-size: 0.85rem;
+  background: #3c1717;
+  border-radius: 8px;
+}
+
+aside {
+  padding: 10px;
+  color: #77746b;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  background: #0b0b0c;
+  border-radius: 8px;
+}
+
+aside strong,
+aside code {
+  display: block;
+}
+
+aside code {
+  margin-top: 4px;
+  color: #aaa69a;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 800px) {
+  main {
+    padding: 28px 0;
+  }
+
+  .session-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .image-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.story-choices {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 18px;
+  background: linear-gradient(transparent, #000000b0);
+}
+
+.story-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.story-choices button {
+  min-width: 220px;
+  max-width: 45%;
+  padding: 14px 18px;
+  font-size: 1rem;
+  background: #ded5b8ee;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px #0008;
+}
+
+/* On a phone both choices share one row, clear of the home bar. */
+@media (max-width: 600px) {
+  .story-choices {
+    padding: 14px 12px calc(14px + env(safe-area-inset-bottom));
+  }
+
+  .story-cards {
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  .story-choices button {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+    padding: 12px 10px;
+    font-size: 0.95rem;
+  }
+}
+
+.story-wait {
+  padding: 8px 14px;
+  color: #ded5b8;
+  font-size: 0.85rem;
+  background: #111c;
+  border-radius: 999px;
+}
+
+.story-path {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.story-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 10px 10px 10px 30px;
+  color: #bbb7ab;
+  font-size: 0.8rem;
+  border: 1px solid #3b3932;
+  border-radius: 10px;
+}
+
+/* Story choices fade in gently. */
+.story-choices button,
+.story-wait {
+  animation: fade-in 1.2s ease-out both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Full-screen droid experience */
+.droid {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  /* Mobile browsers count 100vh as if their toolbars were hidden, which put
+     the lower choice under Safari's bottom bar; dvh is the visible height. */
+  height: 100dvh;
+  padding: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.droid-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.droid-layer video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.droid-stream > div:first-child {
+  width: 100%;
+  height: 100%;
+}
+
+.droid-intro {
+  z-index: 2;
+  background: #000;
+}
+
+.droid-loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #f6f4ed;
+  font-size: 1.05rem;
+  background: #0008;
+  animation: fade-in 0.8s ease-out both;
+}
+
+.droid-begin {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  /* A round, glowing sun over the desert backdrop. */
+  display: grid;
+  place-items: center;
+  width: clamp(120px, 16vmin, 170px);
+  height: clamp(120px, 16vmin, 170px);
+  margin: auto;
+  padding: 12px;
+  color: #cfa979;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  background: #fef8e0bf;
+  /* No border: a soft shadow sets the disc off the sky, the glow makes it a
+     sun. */
+  border: none;
+  border-radius: 50%;
+  box-shadow:
+    0 3px 12px #8a5a2020,
+    0 0 60px 20px #fef8e0a0,
+    0 0 140px 50px #fef8e050;
+  backdrop-filter: blur(4px);
+  animation: fade-in 0.8s ease-out both;
+  transition:
+    scale 200ms ease-out,
+    background 200ms ease-out;
+}
+
+/* Uses `scale`, not `transform`, which the fade-in animation holds. */
+.droid-begin:hover,
+.droid-begin:focus-visible {
+  scale: 1.08;
+  background: #fef8e0e6;
+}
+
+/* On hover the sun sends out soft pulses of light, one after the other. */
+.droid-begin::before,
+.droid-begin::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background: radial-gradient(circle, #fef8e0 40%, #fef8e000 70%);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.droid-begin:hover::before,
+.droid-begin:hover::after,
+.droid-begin:focus-visible::before,
+.droid-begin:focus-visible::after {
+  animation: sun-pulse 2.4s ease-out infinite;
+}
+
+.droid-begin:hover::after,
+.droid-begin:focus-visible::after {
+  animation-delay: 1.2s;
+}
+
+@keyframes sun-pulse {
+  from {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(2.4);
+  }
+}
+
+.spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid #f6f4ed44;
+  border-top-color: #f6f4ed;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.droid-ended {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: #f6f4ed;
+}
+
+.droid-controls {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  display: flex;
+  gap: 8px;
+}
+
+.droid-controls button {
+  color: #f6f4ed;
+  background: #111b;
+  border-color: #f6f4ed55;
+  backdrop-filter: blur(6px);
+}
+
+/* Bottom left; on a phone during the journey the choices need the whole
+   bottom, so the links move to the top left, under the controls. */
+.droid-credits {
+  position: absolute;
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  left: 16px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #f6f4edcc;
+  font-size: 0.8rem;
+}
+
+.droid-credits span {
+  text-shadow: 0 1px 6px #000a;
+}
+
+.droid-credits a {
+  padding: 7px 12px;
+  color: #f6f4ed;
+  text-decoration: none;
+  background: #111b;
+  border: 1px solid #f6f4ed55;
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+  transition: background 150ms ease;
+}
+
+.droid-credits .droid-credits-by {
+  margin-left: 8px;
+}
+
+.droid-credits a:hover {
+  background: #222d;
+}
+
+@media (max-width: 600px) {
+  /* Two lines on a phone ("Powered by…", then "Created by…"), clear of the
+     Skip button on the right. */
+  .droid-credits {
+    flex-wrap: wrap;
+    row-gap: 6px;
+    max-width: 260px;
+  }
+
+  .droid-credits .droid-credits-by {
+    margin-left: 0;
+  }
+
+  /* A row below Mute / Disconnect, which can fill a narrow screen's width. */
+  .droid-credits.live {
+    top: 62px;
+    bottom: auto;
+  }
+
+  /* Just the two links, to stay small over the stream. */
+  .droid-credits.live span {
+    display: none;
+  }
+
+  .droid-credits.live a {
+    padding: 6px 9px;
+  }
+}
+
+.droid-error {
+  position: absolute;
+  bottom: calc(64px + env(safe-area-inset-bottom));
+  left: 16px;
+  z-index: 3;
+  max-width: 60%;
+  margin: 0;
+  padding: 10px;
+  color: #ffb2b2;
+  font-size: 0.85rem;
+  background: #3c1717dd;
+  border-radius: 8px;
+}
+
+.droid-intro video {
+  cursor: pointer;
+}
+
+.droid-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.droid-playpause {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 88px;
+  height: 88px;
+  padding: 0;
+  place-items: center;
+  color: #fff;
+  background: #0009;
+  border: 1px solid #fff5;
+  border-radius: 50%;
+  backdrop-filter: blur(6px);
+  transform: translate(-50%, -50%);
+}
+
+.droid-playpause svg {
+  width: 40px;
+  height: 40px;
+  fill: currentColor;
+}
+
+.droid-playpause.paused {
+  animation: fade-in-center 0.3s ease-out both;
+}
+
+/* After a click while playing: show the pause symbol, then fade away. */
+.droid-playpause.flash {
+  pointer-events: none;
+  animation: flash-out 0.9s ease-out both;
+}
+
+@keyframes fade-in-center {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes flash-out {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+}
+
+/* "Make your choice" countdown above the cards. */
+.story-countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: min(460px, 80%);
+  color: #f6f4ed;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 8px #000a;
+  animation: fade-in 0.8s ease-out both;
+}
+
+.story-countdown-bar {
+  width: 100%;
+  height: 4px;
+  background: #f6f4ed;
+  border-radius: 999px;
+  transform-origin: left center;
+  animation: drain linear both;
+}
+
+/* Fills from left to right as the time to choose runs out. */
+@keyframes drain {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* A picked card is highlighted, the other dims, then both fade away. */
+.story-choices.leaving {
+  animation: fade-out 1.4s ease-in both;
+}
+
+.story-choices.leaving button {
+  animation: none;
+  transition:
+    transform 250ms ease-out,
+    opacity 250ms ease-out;
+}
+
+.story-choices.leaving button:disabled {
+  cursor: default;
+}
+
+.story-choices.leaving button.picked {
+  color: #15130e;
+  background: #f6f4ed;
+  outline: 3px solid #e5c978;
+  transform: scale(1.06);
+  opacity: 1;
+}
+
+.story-choices.leaving button.dropped {
+  opacity: 0.25;
+  transform: scale(0.96);
+}
+
+@keyframes fade-out {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* The story's closing text, over the still frame where the choices would be. */
+.droid-ending {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 24px 12vh;
+  background: linear-gradient(transparent 40%, #000000c0);
+  animation: fade-in 2.4s ease-out both;
+}
+
+.droid-ending p {
+  max-width: 720px;
+  margin: 0;
+  color: #f6f4ed;
+  font-size: clamp(1.05rem, 2.2vw, 1.5rem);
+  line-height: 1.55;
+  text-align: center;
+  text-shadow: 0 1px 12px #000c;
+}
+
+/* The final video, over everything once the story has ended. */
+.droid-outro {
+  z-index: 2;
+  background: #000;
+  animation: fade-to-black 2.5s ease-in both;
+}
+
+@keyframes fade-to-black {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Same look as the top-right Mute / Disconnect buttons. */
+.droid-skip {
+  position: absolute;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom));
+  z-index: 3;
+  color: #f6f4ed;
+  background: #111b;
+  border-color: #f6f4ed55;
+  backdrop-filter: blur(6px);
+  animation: fade-in 0.8s ease-out both;
+}

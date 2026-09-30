@@ -1,0 +1,5 @@
+name = "desert-journey"
+pages_build_output_dir = "out"
+compatibility_date = "2026-09-01"
+# Node APIs for the route handlers, and process.env filled from Pages secrets.
+compatibility_flags = ["nodejs_compat"]

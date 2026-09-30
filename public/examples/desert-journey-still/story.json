@@ -1,0 +1,224 @@
+{
+  "title": "Desert Journey (still) — walk, then sit",
+  "seed": 42,
+  "resolution": "2k",
+  "audio_enabled": true,
+  "audio_prompt": "Calm lo-fi ambient music with warm synth pads, a slow gentle piano melody, soft brushed percussion and a quiet desert breeze.",
+  "cue_gap_chunks": 4,
+  "hold_chunks": 4,
+  "choice_delay_seconds": 18,
+  "start": "walk",
+  "nodes": {
+    "walk": {
+      "cues": [
+        "A small android boy with rounded chunky black hair, a white jointed robot body with a teal panel on his back, white rounded boots and a dull-teal scarf blowing sideways walks slowly away from the camera across rippled golden sand dunes toward a low hazy sun, wind-blown dust drifting along the horizon. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. The camera dollies slowly forward behind him with subtle parallax, keeping his whole body in the frame. CHARACTER (identical in every shot, same proportions, materials, wear and scarf): a physically built child-sized robot, about 1.1 meters tall, rounded friendly proportions, slightly oversized round head. Short black hair of soft molded synthetic material shaped into a few rounded spikes, exactly as in the reference. Small rounded ears on the sides of the head. Smooth white body of matte ceramic-like plates with fine panel seams; on the back, two dull teal inset panels (upper back and lower back with the small hatch seam) matching the reference; on the front, one small dull teal inset panel on the chest in the same material. Teal joint gaps at the neck, hips and knees. Simple rounded hands with short fingers, short sturdy legs, rounded white boots with light sand dust on the soles and lower edges. A short dull-teal woven cotton scarf wrapped once around the neck, one end hanging over the shoulder. Slight wear, scuffs and faint sand marks on the plates, no glowing lights, no exposed wires. Stylized 3D CG animation in the Pixar / DreamWorks tradition, appealing rounded character design with clean silhouettes, soft global illumination with warm motivated key light and gentle fill, subsurface scattering on skin, physically-based materials, believable cloth and hair, rich but controlled cinematic color palette, shallow depth of field with soft bokeh, polished high-quality render. No flat 2D shading, no hand-drawn linework, no photoreal live-action footage, no uncanny realism. Smooth character-animated 3D motion with real weight, anticipation and follow-through, gentle cinematic camera moves — a slow dolly-in with subtle parallax — and consistent lighting across the shot. No morphing, no warping, no jitter. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame."
+      ],
+      "choices": [
+        {
+          "label": "Keep walking alone",
+          "to": "alone"
+        },
+        {
+          "label": "Call a fox to walk with him",
+          "to": "fox-comes"
+        }
+      ],
+      "voice": {
+        "prompt": "The desert is so wide... and so quiet. Should I keep walking on my own? Or would you like a little fox to come with me?",
+        "url": "/examples/desert-journey-voice/walk.mp3"
+      }
+    },
+    "fox-comes": {
+      "cues": [
+        "A small robot fox, knee-high, made of the same matte white ceramic plates as the android boy, with teal joint gaps, tall pointed ears and a long white tail, trots into view over the crest of the dune ahead of the android boy and stops on top, looking down at him. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots.",
+        "The small white robot fox runs down the dune toward the android boy, its long tail streaming behind it. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots.",
+        "The small white robot fox reaches the android boy, turns around and falls into step right beside his left leg, walking at his pace. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots."
+      ],
+      "choices": [
+        {
+          "label": "Head left, to the oasis",
+          "to": "left-oasis-fox"
+        },
+        {
+          "label": "Head right, to the ruins",
+          "to": "right-ruins-fox"
+        }
+      ],
+      "reaction": {
+        "prompt": "It can be a fox... it can be anybody. But having somebody near you is the best feeling in the world.",
+        "url": "/examples/desert-journey-voice/fox-reaction.mp3",
+        "seconds": 8.3
+      },
+      "voice": {
+        "prompt": "I see palm trees to the left... and to the right, the sand is moving. Which way should we go?",
+        "url": "/examples/desert-journey-voice/fox-comes.mp3"
+      }
+    },
+    "alone": {
+      "cues": [
+        "The android boy walks on alone across the open dunes. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots."
+      ],
+      "choices": [
+        {
+          "label": "Head left, to the oasis",
+          "to": "left-oasis"
+        },
+        {
+          "label": "Head right, to the ruins",
+          "to": "right-ruins"
+        }
+      ],
+      "reaction": {
+        "prompt": "It's hard, sometimes, to be alone... but walking on my own a little longer feels good.",
+        "url": "/examples/desert-journey-voice/alone-reaction.mp3",
+        "seconds": 6.9
+      },
+      "voice": {
+        "prompt": "Just me and the wind, then. I see palm trees to the left... and to the right, the sand is moving. Which way?",
+        "url": "/examples/desert-journey-voice/alone.mp3"
+      }
+    },
+    "left-oasis": {
+      "cues": [
+        "The android boy bears slightly left, still walking away from the camera, and walks up the slope of a tall dune ahead of him toward its crest. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots.",
+        "The android boy crosses the crest and starts walking down the far side of the dune, where a few green palm tops appear far off at the foot of the dunes. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots.",
+        "The android boy walks on down the dune as the palm trees grow closer and a small blue pool glints between them. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots.",
+        "The android boy walks off the dune into the oasis, the clear blue pool ringed by palm trees beside him. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots."
+      ],
+      "choices": [
+        {
+          "label": "Walk on and sit down to find yourself in meditation",
+          "to": "oasis-sit"
+        }
+      ],
+      "reaction": {
+        "prompt": "We call it planet Earth, and out here in the desert it really feels that way. But it would be amazing to have a little bit of water... it's such an amazing element.",
+        "url": "/examples/desert-journey-voice/oasis-reaction.mp3",
+        "seconds": 10.5
+      },
+      "voice": {
+        "prompt": "I am losing focus... I need to find myself. And the only way is to stop. Let me find a quiet spot, sit down, and just breathe.",
+        "url": "/examples/desert-journey-voice/focus.mp3"
+      }
+    },
+    "left-oasis-fox": {
+      "cues": [
+        "The android boy bears slightly left, still walking away from the camera, and walks up the slope of a tall dune ahead of him toward its crest. The small white robot fox walks right beside his left leg at the same pace, clearly visible in the frame, seen from behind like him. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots.",
+        "The android boy crosses the crest and starts walking down the far side of the dune, where a few green palm tops appear far off at the foot of the dunes. The small white robot fox walks right beside his left leg at the same pace, clearly visible in the frame, seen from behind like him. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots.",
+        "The android boy walks on down the dune as the palm trees grow closer and a small blue pool glints between them. The small white robot fox walks right beside his left leg at the same pace, clearly visible in the frame, seen from behind like him. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots.",
+        "The android boy walks off the dune into the oasis, the clear blue pool ringed by palm trees beside him. The small white robot fox walks right beside his left leg at the same pace, clearly visible in the frame, seen from behind like him. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots."
+      ],
+      "choices": [
+        {
+          "label": "Walk on and sit down to find yourself in meditation",
+          "to": "oasis-sit-fox"
+        }
+      ],
+      "reaction": {
+        "prompt": "We call it planet Earth, and out here in the desert it really feels that way. But it would be amazing to have a little bit of water... it's such an amazing element.",
+        "url": "/examples/desert-journey-voice/oasis-reaction.mp3",
+        "seconds": 10.5
+      },
+      "voice": {
+        "prompt": "I am losing focus... I need to find myself. And the only way is to stop. Let me find a quiet spot, sit down, and just breathe.",
+        "url": "/examples/desert-journey-voice/focus.mp3"
+      }
+    },
+    "oasis-sit": {
+      "cues": [
+        "The android boy walks on past the oasis, leaving the palm trees behind him, out to a quiet, empty stretch of open sand ahead. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots.",
+        "The android boy stops walking and sits down on the sand in a meditation pose, facing away from the camera: his legs crossed in front of him, each foot tucked beneath the opposite knee, knees resting low on the sand out to the sides, back straight, hands resting on his knees, head level. The camera slowly eases back and holds still behind him, slightly above and a little to his right, framing his whole body with space around it, from the top of his hair to his crossed legs and the sand beneath him, nothing cut off. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame."
+      ],
+      "choices": [],
+      "ending": {
+        "text": "There is so much information in the world. Scrolling, social media, streaming, the rush and pace of the cities. We need to slow down, little by little. For me, and I hope for you, it is about sitting down and closing your eyes. Just a couple of minutes each day brings me peace. I remembered this thanks to this journey with you, here in the desert."
+      },
+      "voice": {
+        "prompt": "There is so much information in the world. Scrolling, social media, streaming, the rush and pace of the cities. We need to slow down, little by little. For me, and I hope for you, it is about sitting down and closing your eyes. Just a couple of minutes each day brings me peace. I remembered this thanks to this journey with you, here in the desert."
+      }
+    },
+    "oasis-sit-fox": {
+      "cues": [
+        "The android boy walks on past the oasis, leaving the palm trees behind him, out to a quiet, empty stretch of open sand ahead. The small white robot fox walks right beside his left leg at the same pace, clearly visible in the frame, seen from behind like him. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots.",
+        "The android boy stops walking and sits down on the sand in a meditation pose, facing away from the camera: his legs crossed in front of him, each foot tucked beneath the opposite knee, knees resting low on the sand out to the sides, back straight, hands resting on his knees, head level. The small white robot fox sits down on the sand right beside him, in the frame. The camera slowly eases back and holds still behind him, slightly above and a little to his right, framing his whole body with space around it, from the top of his hair to his crossed legs and the sand beneath him, nothing cut off. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame."
+      ],
+      "choices": [],
+      "ending": {
+        "text": "There is so much information in the world. Scrolling, social media, streaming, the rush and pace of the cities. We need to slow down, little by little. For me, and I hope for you, it is about sitting down and closing your eyes. Just a couple of minutes each day brings me peace. I remembered this thanks to this journey with you, here in the desert."
+      },
+      "voice": {
+        "prompt": "There is so much information in the world. Scrolling, social media, streaming, the rush and pace of the cities. We need to slow down, little by little. For me, and I hope for you, it is about sitting down and closing your eyes. Just a couple of minutes each day brings me peace. I remembered this thanks to this journey with you, here in the desert."
+      }
+    },
+    "right-ruins": {
+      "cues": [
+        "The android boy bears slightly right, still walking away from the camera, as the sand far ahead of him, between him and the horizon, begins to tremble and slide. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots.",
+        "Broken sandstone pillars and arches burst up out of the sand far ahead of him, in front of him in the direction he is walking, sand pouring off their tops, while the dunes behind him stay empty. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots.",
+        "The android boy walks toward the sandstone pillars ahead of him as they grow closer, and passes between the first two. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots."
+      ],
+      "choices": [
+        {
+          "label": "Walk on and sit down to find yourself in meditation",
+          "to": "ruins-sit"
+        }
+      ],
+      "reaction": {
+        "prompt": "Ruins tell us about our past... and remind us that we all leave a mark. It starts to fade away, but the mark will still be there, long after we are gone.",
+        "url": "/examples/desert-journey-voice/ruins-reaction.mp3",
+        "seconds": 14.0
+      },
+      "voice": {
+        "prompt": "I am losing focus... I need to find myself. And the only way is to stop. Let me find a quiet spot, sit down, and just breathe.",
+        "url": "/examples/desert-journey-voice/focus.mp3"
+      }
+    },
+    "right-ruins-fox": {
+      "cues": [
+        "The android boy bears slightly right, still walking away from the camera, as the sand far ahead of him, between him and the horizon, begins to tremble and slide. The small white robot fox walks right beside his left leg at the same pace, clearly visible in the frame, seen from behind like him. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots.",
+        "Broken sandstone pillars and arches burst up out of the sand far ahead of him, in front of him in the direction he is walking, sand pouring off their tops, while the dunes behind him stay empty. The small white robot fox walks right beside his left leg at the same pace, clearly visible in the frame, seen from behind like him. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots.",
+        "The android boy walks toward the sandstone pillars ahead of him as they grow closer, and passes between the first two. The small white robot fox walks right beside his left leg at the same pace, clearly visible in the frame, seen from behind like him. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots."
+      ],
+      "choices": [
+        {
+          "label": "Walk on and sit down to find yourself in meditation",
+          "to": "ruins-sit-fox"
+        }
+      ],
+      "reaction": {
+        "prompt": "Ruins tell us about our past... and remind us that we all leave a mark. It starts to fade away, but the mark will still be there, long after we are gone.",
+        "url": "/examples/desert-journey-voice/ruins-reaction.mp3",
+        "seconds": 14.0
+      },
+      "voice": {
+        "prompt": "I am losing focus... I need to find myself. And the only way is to stop. Let me find a quiet spot, sit down, and just breathe.",
+        "url": "/examples/desert-journey-voice/focus.mp3"
+      }
+    },
+    "ruins-sit": {
+      "cues": [
+        "The android boy walks on past the last sandstone pillars, leaving the ruins behind him, out to a quiet, empty stretch of open sand ahead. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots.",
+        "The android boy stops walking and sits down on the sand in a meditation pose, facing away from the camera: his legs crossed in front of him, each foot tucked beneath the opposite knee, knees resting low on the sand out to the sides, back straight, hands resting on his knees, head level. The camera slowly eases back and holds still behind him, slightly above and a little to his right, framing his whole body with space around it, from the top of his hair to his crossed legs and the sand beneath him, nothing cut off. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame."
+      ],
+      "choices": [],
+      "ending": {
+        "text": "There is so much information in the world. Scrolling, social media, streaming, the rush and pace of the cities. We need to slow down, little by little. For me, and I hope for you, it is about sitting down and closing your eyes. Just a couple of minutes each day brings me peace. I remembered this thanks to this journey with you, here in the desert."
+      },
+      "voice": {
+        "prompt": "There is so much information in the world. Scrolling, social media, streaming, the rush and pace of the cities. We need to slow down, little by little. For me, and I hope for you, it is about sitting down and closing your eyes. Just a couple of minutes each day brings me peace. I remembered this thanks to this journey with you, here in the desert."
+      }
+    },
+    "ruins-sit-fox": {
+      "cues": [
+        "The android boy walks on past the last sandstone pillars, leaving the ruins behind him, out to a quiet, empty stretch of open sand ahead. The small white robot fox walks right beside his left leg at the same pace, clearly visible in the frame, seen from behind like him. He always faces away from the camera and always walks forward, away from the camera, with the camera following behind him; he never stops and never walks toward the camera, seen only from behind. His head stays pointed straight ahead the whole time, so only the back of his head and his black hair are ever visible. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame. The camera follows behind him, travelling forward at his walking pace and staying the same distance behind him and slightly above, keeping his whole body in the frame from his hair to his boots.",
+        "The android boy stops walking and sits down on the sand in a meditation pose, facing away from the camera: his legs crossed in front of him, each foot tucked beneath the opposite knee, knees resting low on the sand out to the sides, back straight, hands resting on his knees, head level. The small white robot fox sits down on the sand right beside him, in the frame. The camera slowly eases back and holds still behind him, slightly above and a little to his right, framing his whole body with space around it, from the top of his hair to his crossed legs and the sand beneath him, nothing cut off. Rippled golden sand dunes surround him and stretch all the way to the horizon, and the open desert and the horizon line stay visible ahead of him in every frame."
+      ],
+      "choices": [],
+      "ending": {
+        "text": "There is so much information in the world. Scrolling, social media, streaming, the rush and pace of the cities. We need to slow down, little by little. For me, and I hope for you, it is about sitting down and closing your eyes. Just a couple of minutes each day brings me peace. I remembered this thanks to this journey with you, here in the desert."
+      },
+      "voice": {
+        "prompt": "There is so much information in the world. Scrolling, social media, streaming, the rush and pace of the cities. We need to slow down, little by little. For me, and I hope for you, it is about sitting down and closing your eyes. Just a couple of minutes each day brings me peace. I remembered this thanks to this journey with you, here in the desert."
+      }
+    }
+  }
+}
