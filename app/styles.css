@@ -992,19 +992,6 @@ aside code {
   text-shadow: 0 1px 12px #000c;
 }
 
-/* The final video, over everything once the story has ended. */
-.droid-outro {
-  z-index: 2;
-  background: #000;
-  animation: fade-to-black 2.5s ease-in both;
-}
-
-@keyframes fade-to-black {
-  from {
-    opacity: 0;
-  }
-}
-
 /* Same look as the top-right Mute / Disconnect buttons. */
 .droid-skip {
   position: absolute;

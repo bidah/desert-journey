@@ -25,9 +25,9 @@ const START_BACKDROP = "/droid/desert-backdrop.jpg";
 // The soundtrack for the journey; starts with the stream's first frame.
 const SONG = "/droid/golden-dunes.mp3";
 const STORY_DIR = "/examples/desert-journey-still";
-// The ending: the closing text shows this long, then the screen fades to
-// black and the stream closes; the song plays on this long in the dark, then
-// fades out over the last few seconds and stops.
+// The ending: the closing text shows this long, then the live stream plays on
+// with the song for this long (the song fading out over the last few
+// seconds), and then the stream closes.
 const ENDING_TEXT_SECONDS = 15;
 const ENDING_SONG_SECONDS = 10;
 const SONG_FADE_SECONDS = 3;
@@ -183,15 +183,15 @@ function useSpokenLine({
   }, [cue, url, stopped]);
 }
 
-/** The end of the story: the closing text, then black with the song, then done. */
-type EndingPhase = "text" | "black" | "done";
+/** The end of the story: the closing text, then the stream plays out, then done. */
+type EndingPhase = "text" | "outro" | "done";
 
 /**
  * Full-screen flow: the intro video autoplays; when it starts the engine
  * connects, shortly before it ends the Pixar desert story starts, and when the
  * story's first frame is on screen the intro layer is removed. When an ending
  * scene lands, its closing text shows where the choices would, then the screen
- * fades to black and the stream closes while the song plays out.
+ * plays on while the song fades out, then the stream closes.
  */
 function DroidStage({ engine }: { engine: DroidEngine }) {
   const [story, setStory] = useState<Story | null>(null);
@@ -372,11 +372,10 @@ function DroidStage({ engine }: { engine: DroidEngine }) {
     setSoundBlocked(false);
   };
 
-  // Closes the stream. The ending keeps the song playing (`keepSong`).
-  const disconnect = useCallback(async (keepSong = false) => {
+  const disconnect = useCallback(async () => {
     setStopped(true);
     introRef.current?.pause();
-    if (!keepSong) songRef.current?.pause();
+    songRef.current?.pause();
     voiceRef.current?.pause();
     reactionRef.current?.pause();
     if (engine.runStarted) await runner.stop();
@@ -391,18 +390,17 @@ function DroidStage({ engine }: { engine: DroidEngine }) {
     if (endingReached && endingPhase === null) setEndingPhase("text");
   }, [endingReached, endingPhase]);
 
-  // ...then fade to black...
+  // ...then let the stream play on...
   useEffect(() => {
     if (endingPhase !== "text") return;
-    const timer = setTimeout(() => setEndingPhase("black"), ENDING_TEXT_SECONDS * 1000);
+    const timer = setTimeout(() => setEndingPhase("outro"), ENDING_TEXT_SECONDS * 1000);
     return () => clearTimeout(timer);
   }, [endingPhase]);
 
-  // ...close the stream in the dark while the song plays on, and after a while
-  // fade the song out and stop.
+  // ...with the song, fade the song out over the last seconds, and then close
+  // the stream.
   useEffect(() => {
-    if (endingPhase !== "black") return;
-    if (!stopped) void disconnect(true);
+    if (endingPhase !== "outro") return;
     const song = songRef.current;
     let fade: ReturnType<typeof setInterval> | undefined;
     const timer = setTimeout(() => {
@@ -415,6 +413,7 @@ function DroidStage({ engine }: { engine: DroidEngine }) {
           clearInterval(fade);
           song?.pause();
           setEndingPhase("done");
+          void disconnect();
         }
       }, 50);
     }, (ENDING_SONG_SECONDS - SONG_FADE_SECONDS) * 1000);
@@ -463,8 +462,6 @@ function DroidStage({ engine }: { engine: DroidEngine }) {
           </div>
         )}
       </div>
-
-      {endingPhase === "black" && <div className="droid-layer droid-outro" />}
 
       {!live && !stopped && (
         <div className="droid-layer droid-intro">
@@ -519,7 +516,7 @@ function DroidStage({ engine }: { engine: DroidEngine }) {
         </div>
       )}
 
-      {stopped && endingPhase !== "black" && (
+      {stopped && (
         <div className="droid-layer droid-ended">
           <p>{endingPhase ? "Thank you for walking with him." : "The stream has ended."}</p>
           <button type="button" onClick={() => window.location.reload()}>
