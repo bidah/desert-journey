@@ -518,9 +518,9 @@ function DroidStage({ engine }: { engine: DroidEngine }) {
 
       {stopped && (
         <div className="droid-layer droid-ended">
-          <p>{endingPhase ? "Thank you for walking with him." : "The stream has ended."}</p>
+          <p>{endingPhase ? "Thanks for walking with me." : "The stream has ended."}</p>
           <button type="button" onClick={() => window.location.reload()}>
-            Watch again
+            {endingPhase ? "Start the journey again" : "Watch again"}
           </button>
         </div>
       )}
